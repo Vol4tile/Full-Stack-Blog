@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500&display=swap");
+
+:root {
+  --firstFont: "Lato", sans-serif;
+  --secondFont: "Poppins", sans-serif;
+  --editorBorderColor: gray;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: var(--firstFont);
+}
+main {
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: #f2f4f5;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fcfcfc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6dd5fa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #47bee9;
+}
+svg {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.quill {
+  position: relative;
+}
+.ql-toolbar {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  justify-content: flex-end;
+  border: none !important;
+}
+.ql-container {
+  margin-top: 30px;
+  border: none !important;
+}
+.q1-formats {
+  border-radius: 10%;
+}
