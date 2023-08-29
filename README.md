@@ -1,9 +1,15 @@
 # Full-Stack-Blog
  React, Express, MongoDb
 
- cd client && npm install && npm run dev
 
- cd server && npm install && npm start
+```bash
+ cd client
+ npm run dev
+
+ cd server
+ npm start
+```
+
 
  ![1](https://github.com/Vol4tile/Full-Stack-Blog/assets/104697209/33800e36-1637-44dd-904a-9677b375fd54)
 ![2](https://github.com/Vol4tile/Full-Stack-Blog/assets/104697209/cdf2fa28-62ae-49f9-820d-87eba6aa9b2c)
