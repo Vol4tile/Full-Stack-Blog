@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
-const Pages = () => {
+const Layout = () => {
   return (
     <>
       <Navbar />
@@ -13,4 +13,4 @@ const Pages = () => {
   );
 };
 
-export default Pages;
+export default Layout;

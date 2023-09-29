@@ -1,8 +1,7 @@
 import userDataService from "../../services/userService";
-export const getUserData = (title) => async (dispatch) => {
+export const GetUserData = (title) => async (dispatch) => {
   try {
-    const res = await userDataService.login(title);
-
+    const res = await userDataService.Login(title);
     dispatch({
       type: "login",
       payload: res.data,
@@ -16,8 +15,7 @@ export const getUserData = (title) => async (dispatch) => {
 };
 export const relogin = () => async (dispatch) => {
   try {
-    const res = await userDataService.getRelogin();
-
+    const res = await userDataService.GetRelogin();
     dispatch({
       type: "login",
       payload: res.data,
@@ -30,15 +28,14 @@ export const relogin = () => async (dispatch) => {
   }
 };
 export const Logout = () => (dispatch) => {
-  const res = userDataService.getLogout();
-
+  const res = userDataService.GetLogout();
   dispatch({ type: "Logout", payload: false });
   dispatch({
     type: "loginError",
     payload: true,
   });
 };
-export const googLogin = (data) => async (dispatch) => {
+export const GoogLogin = (data) => async (dispatch) => {
   try {
     dispatch({
       type: "login",

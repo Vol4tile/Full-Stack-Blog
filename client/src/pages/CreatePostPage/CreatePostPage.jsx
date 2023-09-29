@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { HTTP } from "../axios";
+import { HTTP } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import hljs from "highlight.js";
 import ReactQuill from "react-quill";
-import "../../node_modules/react-quill/dist/quill.snow.css";
-import "../../node_modules/highlight.js/styles/github-dark.css";
-import CreatePostCSS from "../css/CreatePost.module.css";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import "../../../node_modules/react-quill/dist/quill.snow.css";
+import "../../../node_modules/highlight.js/styles/github-dark.css";
+import styles from "./CreatePost.module.css";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -162,11 +162,11 @@ const CreatePostPage = () => {
   };
 
   return (
-    <div className={CreatePostCSS.container}>
-      <div className={CreatePostCSS.innerContainer}>
-        <div className={CreatePostCSS.titleContainer}>
+    <div className={styles.container}>
+      <div className={styles.innerContainer}>
+        <div className={styles.titleContainer}>
           <input
-            className={CreatePostCSS.title}
+            className={styles.title}
             type="text"
             placeholder="Başlık"
             onChange={(e) => {
@@ -198,8 +198,8 @@ const CreatePostPage = () => {
             });
           }}
         />
-        <div className={CreatePostCSS.btnContainer}>
-          <div className={CreatePostCSS.btn} onClick={submitHandler}>
+        <div className={styles.btnContainer}>
+          <div className={styles.btn} onClick={submitHandler}>
             {buttonText}
           </div>
         </div>

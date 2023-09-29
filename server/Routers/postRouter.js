@@ -49,7 +49,6 @@ router.get("/LatestPosts", async (req, res) => {
       res.status(201);
     }
   } catch (err) {
-   
     res.status(404);
   }
 });
@@ -72,7 +71,6 @@ router.get("/selectedPost/:postId", async (req, res) => {
       res.status(201);
     }
   } catch (err) {
-   
     res.status(404);
   }
 });
@@ -81,19 +79,16 @@ router.post("/uploadImage", [upload.single("file")], async (req, res) => {
     const path = req.file.filename;
 
     res.status(200).json(path);
-  } catch (err) {
-   
-  }
+  } catch (err) {}
 });
 
 router.get("/posts/:offset", async (req, res) => {
   try {
     const { error, value } = offsetsSchema.validate(req.params);
     if (error) {
-     
       return res.status(500).json({ message: error.message });
     }
-  
+
     const { offset } = value;
     const limit = 10;
 
@@ -105,7 +100,6 @@ router.get("/posts/:offset", async (req, res) => {
 
     res.status(200).json(posts);
   } catch (error) {
-  
     res.status(500).json({ error: " error" });
   }
 });
@@ -113,15 +107,14 @@ router.get("/myPosts/:offset", tokenControl, async (req, res) => {
   try {
     const { error, value } = offsetsSchema.validate(req.params);
     if (error) {
-     
       return res.status(500).json({ message: error.message });
     }
-   
+
     const { offset } = value;
 
     const limit = 10;
     const username = req.user;
-   
+
     const user = await User.findOne({ username });
     const posts = await Post.find({ postedBy: user._id })
       .sort({ createDate: -1 })
@@ -131,7 +124,6 @@ router.get("/myPosts/:offset", tokenControl, async (req, res) => {
 
     res.status(200).json(posts);
   } catch (error) {
-   
     res.status(500).json({ error: " error" });
   }
 });

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUserData, googLogin } from "../actions/userData/user";
+import { GetUserData, GoogLogin } from "../../actions/userData/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useGoogleLogin } from "@react-oauth/google";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,8 +10,8 @@ import {
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import CSS from "../css/Login.module.css";
-import { HTTP } from "../axios";
+import styles from "./Login.module.css";
+import { HTTP } from "../../services/api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 function LoginPage() {
@@ -49,21 +49,21 @@ function LoginPage() {
   function handleSubmit({ username, password }) {
     setTryLogin(true);
     setButtonText("Giriş Yapılıyor...");
-    dispatch(getUserData({ username, password }));
+    dispatch(GetUserData({ username, password }));
     // Kullanıcının girdiği bilgileri sunucuya göndermek için HTTP isteği yapılır
   }
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       const token = codeResponse.access_token;
       HTTP.post("user/google-login", { token }).then((res) => {
-        dispatch(googLogin(res.data));
+        dispatch(GoogLogin(res.data));
       });
     },
   });
   return (
     <>
-      <div className={CSS.container}>
-        <div className={CSS.innerContainer}>
+      <div className={styles.container}>
+        <div className={styles.innerContainer}>
           <Formik
             validationSchema={schema}
             initialValues={{ username: "", password: "" }}
@@ -80,9 +80,9 @@ function LoginPage() {
               handleBlur,
               handleSubmit,
             }) => (
-              <div className={CSS.formContainer}>
+              <div className={styles.formContainer}>
                 <h1>Giriş Yap</h1>
-                <div className={CSS.form}>
+                <div className={styles.form}>
                   {/* Passing handleSubmit parameter tohtml form onSubmit property */}
                   <form noValidate onSubmit={handleSubmit}>
                     <label htmlFor="username">
@@ -101,7 +101,7 @@ function LoginPage() {
                       />
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>
+                    <p className={styles.error}>
                       {touched.username && errors.username}
                     </p>
                     <label htmlFor="password">
@@ -134,12 +134,12 @@ function LoginPage() {
                       )}
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>
+                    <p className={styles.error}>
                       {touched.password && errors.password}
                     </p>
                     {/* Click on submit button to submit the form */}
                     <button type="submit">{buttonText}</button>
-                    <p className={CSS.error}>{loginErrorText}</p>
+                    <p className={styles.error}>{loginErrorText}</p>
                     <span
                       style={{
                         width: "100%",
@@ -167,7 +167,7 @@ function LoginPage() {
                     </span>
 
                     <button
-                      className={CSS.googleButton}
+                      className={styles.googleButton}
                       type="button"
                       onClick={() => login()}
                     >

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "../css/Settings.module.css";
-import dateToString from "../utils/dateToSring";
+import styles from "./Settings.module.css";
+import dateToString from "../../utils/dateToSring";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { motion } from "framer-motion";

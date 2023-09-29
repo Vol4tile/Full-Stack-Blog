@@ -1,9 +1,9 @@
 import React from "react";
-import NavbarCSS from "../css/Navbar.module.css";
+import styles from "./Navbar.module.css";
 import { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Logout } from "../actions/userData/user.js";
+import { Logout } from "../../actions/userData/user";
 import { BiCodeAlt } from "react-icons/bi";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -18,9 +18,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
     function handleClickOutside(event) {
       if (
         wrapperRef.current &&
@@ -31,10 +28,8 @@ const Navbar = () => {
         setAccountBarToggle(false);
       }
     }
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [wrapperRef, iconRef]);
@@ -42,7 +37,6 @@ const Navbar = () => {
     hidden: { opacity: 1, scale: 0 },
     visible: {
       opacity: 1,
-
       scale: 1,
       transition: {
         delayChildren: 0.3,
@@ -50,7 +44,6 @@ const Navbar = () => {
       },
     },
   };
-
   return (
     <>
       <header>
@@ -58,16 +51,16 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-              isPending ? NavbarCSS.pending : isActive ? NavbarCSS.active : ""
+              isPending ? styles.pending : isActive ? styles.active : ""
             }
           >
-            <BiCodeAlt size={24} fill="white" />
+            <BiCodeAlt size={24} />
           </NavLink>
-          <div className={NavbarCSS.navContainer}>
+          <div className={styles.navContainer}>
             <NavLink
               to="Posts"
               className={({ isActive, isPending }) =>
-                isPending ? NavbarCSS.pending : isActive ? NavbarCSS.active : ""
+                isPending ? styles.pending : isActive ? styles.active : ""
               }
             >
               Paylaşımlar
@@ -79,17 +72,17 @@ const Navbar = () => {
                 to="CreatePost"
                 className={({ isActive, isPending }) =>
                   isPending
-                    ? NavbarCSS.pending
+                    ? styles.pending
                     : isActive
-                    ? `${NavbarCSS.active} ${NavbarCSS.post}`
-                    : NavbarCSS.post
+                    ? `${styles.active} ${styles.post}`
+                    : styles.post
                 }
               >
                 Paylaşım Yap
               </NavLink>
             )}
             {userData.succes == true && userData.user && (
-              <div className={NavbarCSS.account} ref={iconRef}>
+              <div className={styles.account} ref={iconRef}>
                 <AiOutlineUser
                   size={24}
                   style={{ cursor: "pointer" }}
@@ -104,14 +97,12 @@ const Navbar = () => {
                     initial: "hide",
                   })}
                   ref={wrapperRef}
-                  className={NavbarCSS.accountNav}
+                  className={styles.accountNav}
                   style={{ display: accountBarToggle ? "block" : "none" }}
                 >
                   {accountBarToggle && (
                     <>
-                      <RxTriangleUp
-                        className={NavbarCSS.triangle}
-                      ></RxTriangleUp>
+                      <RxTriangleUp className={styles.triangle}></RxTriangleUp>
 
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -120,7 +111,7 @@ const Navbar = () => {
                       >
                         {" "}
                         <NavLink to="Account">
-                          <label className={NavbarCSS.accountMenus}>
+                          <label className={styles.accountMenus}>
                             <AiOutlineUser></AiOutlineUser>
                             Hesabım
                           </label>
@@ -132,7 +123,7 @@ const Navbar = () => {
                         transition={{ duration: 1 }}
                       >
                         <NavLink to="Settings">
-                          <label className={NavbarCSS.accountMenus}>
+                          <label className={styles.accountMenus}>
                             <AiFillSetting></AiFillSetting>
                             Ayarlar
                           </label>
@@ -143,7 +134,7 @@ const Navbar = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1.5 }}
-                        className={NavbarCSS.btn}
+                        className={styles.btn}
                         style={{
                           cursor: "pointer",
                           display: "flex",

@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { HTTP } from "../axios";
-
-import MainCSS from "../css/Main.module.css";
-
-import changeMetaTags from "../utils/changeMetaTags";
+import { HTTP } from "../../services/api";
+import styles from "./Main.module.css";
+import changeMetaTags from "../../utils/changeMetaTags";
 import hljs from "highlight.js";
-import "../../node_modules/highlight.js/styles/github.css";
-
+import "../../../node_modules/highlight.js/styles/github.css";
 import { useEffect } from "react";
-
 import DOMPurify from "dompurify";
-import Post from "../components/Post";
+import Post from "../../components/Post/Post";
 const MainPage = () => {
   const [posts, setPosts] = useState([]);
 

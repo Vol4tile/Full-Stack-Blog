@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Kayit } from "../axios";
-import CSS from "../css/Login.module.css";
+import { Register } from "../../services/userService";
+import styles from "../LoginPage/Login.module.css";
 import { Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -39,7 +39,7 @@ const RegisterPage = () => {
   });
   const [buttonText, setButtonText] = useState("Kaydol");
   const handleSubmit = ({ username, password, email, fullname }) => {
-    Kayit({ username, password, email, fullname })
+    Register({ username, password, email, fullname })
       .then((res) => {
         toast.success(
           "Hesabınız oluşturuldu. Anasayfaya yönlendiriliyorsunuz.",
@@ -95,8 +95,8 @@ const RegisterPage = () => {
   };
   return (
     <>
-      <div className={CSS.container}>
-        <div className={CSS.innerContainer}>
+      <div className={styles.container}>
+        <div className={styles.innerContainer}>
           <Formik
             validationSchema={schema}
             initialValues={{
@@ -118,9 +118,9 @@ const RegisterPage = () => {
               handleBlur,
               handleSubmit,
             }) => (
-              <div className={CSS.formContainer}>
+              <div className={styles.formContainer}>
                 <h1>Kaydol</h1>
-                <div className={CSS.form}>
+                <div className={styles.form}>
                   {/* Passing handleSubmit parameter tohtml form onSubmit property */}
                   <form noValidate onSubmit={handleSubmit}>
                     <label htmlFor="username">
@@ -139,7 +139,7 @@ const RegisterPage = () => {
                       />
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>
+                    <p className={styles.error}>
                       {touched.username && errors.username}
                     </p>
                     <label htmlFor="password">
@@ -172,7 +172,7 @@ const RegisterPage = () => {
                       )}
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>
+                    <p className={styles.error}>
                       {touched.password && errors.password}
                     </p>
                     <label htmlFor="fullname">
@@ -191,7 +191,7 @@ const RegisterPage = () => {
                       />
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>
+                    <p className={styles.error}>
                       {touched.fullname && errors.fullname}
                     </p>
 
@@ -211,11 +211,13 @@ const RegisterPage = () => {
                       />
                     </label>
                     {/* If validation is not passed show errors */}
-                    <p className={CSS.error}>{touched.email && errors.email}</p>
+                    <p className={styles.error}>
+                      {touched.email && errors.email}
+                    </p>
 
                     {/* Click on submit button to submit the form */}
                     <button type="submit">Kaydol</button>
-                    <p className={CSS.error}>{registerErrorText}</p>
+                    <p className={styles.error}>{registerErrorText}</p>
                     <span
                       style={{
                         width: "100%",

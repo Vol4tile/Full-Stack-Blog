@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { getPosts } from "../axios";
-import Post from "../components/Post";
-import styles from "../css/Posts.module.css";
+import { GetPosts } from "../../services/postService";
+import Post from "../../components/Post/Post";
+import styles from "./Posts.module.css";
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -10,7 +10,7 @@ const PostsPage = () => {
     useGetPosts();
   }, []);
   const useGetPosts = () => {
-    getPosts(offset).then((res) => {
+    GetPosts(offset).then((res) => {
       if (res.status == 200) {
         if (res.data.length > 0) {
           res.data.map((data) => {

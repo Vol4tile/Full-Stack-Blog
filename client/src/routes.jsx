@@ -1,17 +1,17 @@
-import MainPage from "./pages/MainPage";
-import NotFound from "./pages/NotFound";
-import LoginPage from "./pages/LoginPage";
-import CreatePostPage from "./pages/CreatePostPage";
-import RegisterPage from "./pages/RegisterPage";
-import Pages from "./pages/Pages";
-import PostsPage from "./pages/PostsPage";
-import AccountPage from "./pages/AccountPage";
-import SettingsPage from "./pages/SettingsPage";
-import SelectedPostPage from "./pages/SelectedPostPage";
+import MainPage from "./pages/MainPage/MainPage";
+import NotFound from "./pages/NotFoundPage/NotFound";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import CreatePostPage from "./pages/CreatePostPage/CreatePostPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import Layout from "./pages/Layout";
+import PostsPage from "./pages/PostsPage/PostsPage";
+import AccountPage from "./pages/AccountPage/AccountPage";
+import SettingsPage from "./pages/SettingsPage/SettingsPage";
+import SelectedPostPage from "./pages/SelectedPostPage/SelectedPostPage";
 const routes = [
   {
     path: "/",
-    element: <Pages />,
+    element: <Layout />,
     children: [
       { index: true, element: <MainPage /> },
       { path: "/Login", element: <LoginPage /> },

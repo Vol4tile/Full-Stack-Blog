@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "../css/SelectedPost.module.css";
-import { getSelectedPost } from "../axios";
+import styles from "./SelectedPost.module.css";
+import {GetSelectedPost} from "../../services/postService"
 import parse from "html-react-parser";
-import dateToString from "../utils/dateToSring";
+import dateToString from "../../utils/dateToSring";
 import { motion } from "framer-motion";
 const SelectedPostPage = () => {
   const { postId } = useParams();
   const [post, setPost] = useState();
   useEffect(() => {
-    getSelectedPost(postId)
+    GetSelectedPost(postId)
       .then((res) => {
         setPost(res.data);
       })

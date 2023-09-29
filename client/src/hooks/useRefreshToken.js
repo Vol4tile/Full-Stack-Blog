@@ -1,4 +1,4 @@
-import { HTTP } from "../axios";
+import { HTTP } from "../services/api";
 
 const useRefreshToken = () => {
   const refresh = async () => {

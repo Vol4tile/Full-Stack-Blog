@@ -1,4 +1,4 @@
-import { axiosPrivate } from "../axios";
+import { axiosPrivate } from "../services/api";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 

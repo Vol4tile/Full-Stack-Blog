@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "../css/Account.module.css";
+import styles from "./Account.module.css";
 import { useSelector } from "react-redux";
-import dateToString from "../utils/dateToSring";
+import dateToString from "../../utils/dateToSring";
 import { useNavigate } from "react-router-dom";
-import Post from "../components/Post";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import Post from "../../components/Post/Post";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 const AccountPage = () => {
   const user = useSelector((state) => state.users);

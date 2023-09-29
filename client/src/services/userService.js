@@ -1,19 +1,23 @@
-import { HTTP } from "../axios";
+import { HTTP } from "./api";
 
-const login = (formData) => {
+export const Register = async (formData) =>
+  await HTTP.post("/user/register", formData);
+
+const Login = (formData) => {
   return HTTP.post("/user/login", formData);
 };
 
-const getRelogin = () => {
+const GetRelogin = () => {
   return HTTP.get("/user/relogin");
 };
-const getLogout = () => {
+const GetLogout = () => {
   return HTTP.get("/user/Logout");
 };
 const userService = {
-  login,
-  getRelogin,
-  getLogout,
+  Register,
+  Login,
+  GetRelogin,
+  GetLogout,
 };
 
 export default userService;

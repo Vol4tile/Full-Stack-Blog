@@ -3,10 +3,9 @@ header {
   height: 100px;
   font-family: var(--secondFont);
   font-size: 16px;
-
   display: flex;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -15,7 +14,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 100%;
   width: 80%;
 }
@@ -30,7 +28,7 @@ nav a,
 nav a:link,
 nav a:visited {
   position: relative;
-  color: white;
+  color: black;
   text-decoration: none;
   width: fit-content;
   padding: 5px;
@@ -39,36 +37,11 @@ nav a:visited {
   align-items: center;
 }
 nav a:hover {
-  color: #6dd5fa;
-  border-color: #6dd5fa;
+  color: purple;
 }
 
 .active {
-  color: #6dd5fa !important;
-}
-.active::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-
-  z-index: -1;
-
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  width: 0px;
-  bottom: 0px;
+  color: purple !important;
 }
 .post {
   color: white;
@@ -100,7 +73,7 @@ nav a:hover {
   flex-direction: column;
   border-radius: 8px;
   padding: 20px;
-  background-color: black;
+  background-color: white;
   top: 72px;
   right: -80px;
   z-index: 2;
@@ -115,7 +88,7 @@ nav a:hover {
 .triangle {
   position: absolute;
   top: -25px;
-  color: black;
+  color: white;
   left: 45%;
   transform: translateX(-50%);
   transform: rotate(180deg);
