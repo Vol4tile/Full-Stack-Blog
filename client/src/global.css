@@ -20,7 +20,7 @@ body,
 main {
   width: 100%;
   height: calc(100% - 100px);
-  background-color: rgb(240, 240, 240);
+  background-color: white;
   overflow: auto;
 }
 ::-webkit-scrollbar {
