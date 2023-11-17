@@ -1,5 +1,5 @@
 # Full-Stack-Blog
- React, Express, MongoDb
+ MERN STACK BLOG
 
 
 ```bash
