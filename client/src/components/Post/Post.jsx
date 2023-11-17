@@ -17,8 +17,9 @@ const Post = ({ post }) => {
       >
         <h1>{post.baslik}</h1>
         <div className={styles.yazi}> {parse(post.yazi)}</div>
+        <Link to={"/Post/" + post._id}>Devamını gör</Link>
         <div className={styles.bottomContainer}>
-          <Link to={"/Post/" + post._id}>Devamını gör</Link>
+         
           <div className={styles.bottomContent}>
             <div className={styles.writer}>
               <div className={styles.writerInfo}>

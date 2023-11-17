@@ -7,6 +7,7 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   grid-gap: 10px;
 }
+
 @media only screen and (max-width: 600px) {
   .container {
     padding: 5px;

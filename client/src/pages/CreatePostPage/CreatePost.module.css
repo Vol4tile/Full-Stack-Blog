@@ -1,5 +1,4 @@
 .container {
-  background-color: #fff;
   width: 100%;
   min-height: 100%;
   display: flex;
@@ -18,17 +17,28 @@
   gap: 5px;
 }
 .titleContainer {
-  border: 3px solid var(--editorBorderColor);
   margin-left: 1%;
   width: 98%;
   border-radius: 5px;
 }
 .title {
-  width: 100%;
 
+  width: 100%;
+  border: 1px solid #6dd5fa;
   padding: 10px;
-  border: none;
+border-radius: 5px;
   outline: none;
+}
+.quill {
+  width: 98%;
+  margin-left: 1%;
+  min-height: 300px;
+  overflow: hidden;
+
+  color: #1f2833;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #6dd5fa;
 }
 .btnContainer {
   width: 98%;
@@ -38,8 +48,9 @@
   float: right;
   width: 200px;
   padding: 10px;
-  background-color: var(--editorBorderColor);
+  background-color: #6dd5fa;
   color: white;
+
   cursor: pointer;
   transition: 500ms;
   display: flex;

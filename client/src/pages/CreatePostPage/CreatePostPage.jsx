@@ -49,7 +49,6 @@ const CreatePostPage = () => {
           });
         })
         .catch((err) => {
-         
           if (err.response.status === 500) {
             toast.error(
               "Sadece JPEG, PNG ve GIF dosyalarına izin veriliyor. ",
@@ -93,14 +92,19 @@ const CreatePostPage = () => {
       },
       toolbar: {
         container: [
-          // [{ header: [1, 2, false] }],
+          [{ header: [1, 2, false] }],
 
-          //  ['bold', 'italic', 'underline', 'strike', 'blockquote','code-block'],
-          ["code-block"],
-          //  [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
-          //  ['link', 'image'],
-          ["image"],
-          // ['clean']
+          ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+
+          [
+            { list: "ordered" },
+            { list: "bullet" },
+            { indent: "-1" },
+            { indent: "+1" },
+          ],
+          ["link", "image"],
+
+          ["clean"],
         ],
         handlers: {
           image: imageHandler,
@@ -181,16 +185,7 @@ const CreatePostPage = () => {
           modules={modules}
           formats={formats}
           placeholder="Bir şeyler yaz..."
-          style={{
-            width: "98%",
-            marginLeft: "1%",
-            minHeight: "300px",
-            overflow: "hidden",
-            boxShadow: "  var(--editorBorderColor) 0px 0px 0px 3px",
-            color: "1f2833",
-            backgroundColor: "white",
-            borderRadius: "5px",
-          }}
+          className={styles.quill}
           onChange={(e) => {
             setFormData({
               ...formData,

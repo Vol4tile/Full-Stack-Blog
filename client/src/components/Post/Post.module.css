@@ -4,6 +4,7 @@
   flex-direction: column;
   background-color: white;
   padding: 10px;
+  height: fit-content;
   width: auto;
   gap: 10px;
   z-index: 1;
@@ -47,7 +48,7 @@ article a {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  background-color: #f2f4f5;
+  border:1px solid #d0d1d1;
   padding: 10px;
 
   border-radius: 5px;
@@ -55,7 +56,7 @@ article a {
 .yazi {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 400px;
   font-size: 18px;
   overflow: hidden;
   border-radius: 5px;
