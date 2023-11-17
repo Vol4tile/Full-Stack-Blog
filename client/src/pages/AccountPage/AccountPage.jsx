@@ -48,7 +48,7 @@ const AccountPage = () => {
           <div>
             <img
               src={`http://127.0.0.1:5000/${user.user?.foundUser?.profilePhoto}`}
-              crossOrigin="true"
+              crossOrigin="anonymous"
               alt="profilePhoto"
               style={{
                 height: "100px",

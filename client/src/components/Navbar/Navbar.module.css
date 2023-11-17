@@ -1,12 +1,11 @@
 header {
   width: 100%;
-  height: 100px;
+  height: 70px;
   font-family: var(--secondFont);
   font-size: 16px;
   display: flex;
   color: black;
   background-color: white;
-  border-bottom: 1px solid rgb(211, 211, 211);
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -38,11 +37,11 @@ nav a:visited {
   align-items: center;
 }
 nav a:hover {
-  color: purple;
+  color: #6dd5fa;
 }
 
 .active {
-  color: purple !important;
+  color: #6dd5fa !important;
 }
 .post {
   color: white;

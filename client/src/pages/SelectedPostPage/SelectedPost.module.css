@@ -3,12 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--thirdFont);
 }
 .article {
   margin: 20px;
   height: auto;
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
   gap: 10px;
   padding: 50px;
   background-color: white;

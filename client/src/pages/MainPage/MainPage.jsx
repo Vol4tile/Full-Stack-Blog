@@ -38,7 +38,7 @@ const MainPage = () => {
 
   return (
     <>
-      <section>
+      <section data-testid="main-page">
         <h1
           style={{
             padding: "50px 50px 0px 50px",
@@ -52,7 +52,7 @@ const MainPage = () => {
           En Yeniler
         </h1>
         {posts.map((post) => {
-          return <Post post={post} key={post._id} />;
+          return <Post  post={post} key={post._id} />;
         })}
       </section>
     </>

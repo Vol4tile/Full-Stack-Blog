@@ -38,7 +38,7 @@ const SelectedPostPage = () => {
                   <img
                     src={`http://127.0.0.1:5000/${post?.postedBy?.profilePhoto}`}
                     alt="userProfilePhoto"
-                    crossOrigin="use-credentials"
+                    crossOrigin="anonymous"
                     height={40}
                     width={40}
                   />

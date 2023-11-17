@@ -16,6 +16,7 @@ export const GetUserData = (title) => async (dispatch) => {
 export const relogin = () => async (dispatch) => {
   try {
     const res = await userDataService.GetRelogin();
+    
     dispatch({
       type: "login",
       payload: res.data,

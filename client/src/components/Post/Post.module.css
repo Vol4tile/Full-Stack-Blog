@@ -6,7 +6,6 @@
   padding: 10px;
   width: auto;
   gap: 10px;
-  border: 1px solid rgb(211, 211, 211); ;
   z-index: 1;
 }
 article a {
@@ -48,20 +47,16 @@ article a {
   display: flex;
   flex-direction: column;
   gap: 5px;
-border-radius: 10px;
+  background-color: #f2f4f5;
   padding: 10px;
-  border: 1px solid #d3d3d3;
 
+  border-radius: 5px;
 }
 .yazi {
   display: flex;
   flex-direction: column;
   height: 300px;
-  font-size: 16px;
-  line-height: 1.6;
- 
- 
-  color: #333;
+  font-size: 18px;
   overflow: hidden;
   border-radius: 5px;
 }
