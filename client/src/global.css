@@ -24,6 +24,9 @@ main {
   background-color: rgb(240, 240, 240);
   overflow: auto;
 }
+.dark {
+  background-color: rgb(25, 25, 25);
+}
 ::-webkit-scrollbar {
   width: 5px;
 }

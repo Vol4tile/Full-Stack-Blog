@@ -8,10 +8,13 @@ import { BiCodeAlt } from "react-icons/bi";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import {useTheme} from "../../context/ThemeContext"
+import { FiSun, FiMoon } from "react-icons/fi";
 import { AiOutlineUser, AiOutlineLogout, AiFillSetting } from "react-icons/ai";
 import { RxTriangleUp } from "react-icons/rx";
 const Navbar = () => {
   const userData = useSelector((state) => state.users);
+  const { isDarkMode, toggleTheme } = useTheme();
   const iconRef = useRef(null);
   const wrapperRef = useRef(null);
   const [accountBarToggle, setAccountBarToggle] = useState(false);
@@ -46,7 +49,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <header>
+      <header className={isDarkMode ? styles.dark : null}>
         <nav>
           <NavLink
             to="/"
@@ -151,6 +154,7 @@ const Navbar = () => {
                       </motion.div>
                     </>
                   )}
+               
                 </motion.div>
               </div>
             )}
@@ -158,6 +162,13 @@ const Navbar = () => {
               userData.errorHandler == true) && (
               <Link to="Login">Giriş Yap</Link>
             )}
+               <div className={styles.toggle}>
+          {isDarkMode ? (
+            <FiMoon size={20} onClick={toggleTheme} />
+          ) : (
+            <FiSun size={20} onClick={toggleTheme} />
+          )}
+        </div>
           </div>
         </nav>
       </header>

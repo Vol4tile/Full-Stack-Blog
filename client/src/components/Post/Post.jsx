@@ -4,12 +4,14 @@ import styles from "./Post.module.css";
 import { Link } from "react-router-dom";
 import dateToString from "../../utils/dateToSring";
 import parse from "html-react-parser";
+import { useTheme } from "../../context/ThemeContext";
 const Post = ({ post }) => {
+  const { isDarkMode, toggleTheme } = useTheme();
   return (
     <>
       <motion.article
       data-testid="post"
-        className={styles.article}
+        className={`${styles.article} ${isDarkMode ? styles.dark : null}`}
         key={post._id}
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -28,6 +30,7 @@ const Post = ({ post }) => {
                   alt="userProfilePhoto"
                   crossOrigin="anonymous"
                   height={40}
+                  style={{borderRadius:"50%"}}
                   width={40}
                 />
 

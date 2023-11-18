@@ -8,7 +8,9 @@ import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { motion } from "framer-motion";
+import {useTheme} from "../../context/ThemeContext"
 const SettingsPage = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
   const [state, setState] = useState(0);
   const user = useSelector((state) => state.users);
   const [fullname, setFullname] = useState("");
@@ -53,7 +55,7 @@ const SettingsPage = () => {
     .email("email formatında olmalı");
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isDarkMode ? styles.dark :null}`}>
       {user.succes && (
         <div className={styles.profile}>
           <div>

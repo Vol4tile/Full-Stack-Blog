@@ -5,9 +5,14 @@
   background-color: white;
   padding: 10px;
   height: fit-content;
+  font-family: var(--thirdFont);
   width: auto;
   gap: 10px;
   z-index: 1;
+}
+.dark{
+  background-color: black;
+  color: white;
 }
 article a {
   color: grey;

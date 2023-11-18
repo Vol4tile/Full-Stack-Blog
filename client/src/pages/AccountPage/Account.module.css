@@ -5,6 +5,7 @@
   flex-direction: column;
   overflow: auto;
 }
+
 .profile {
   margin: auto;
   width: 400px;
@@ -17,7 +18,10 @@
   padding: 50px;
   border-radius: 5px;
 }
-
+.dark .profile{
+  color: white;
+  background-color: black;
+  }
 .posts {
   width: 100%;
   height: auto;

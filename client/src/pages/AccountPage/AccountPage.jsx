@@ -5,9 +5,11 @@ import dateToString from "../../utils/dateToSring";
 import { useNavigate } from "react-router-dom";
 import Post from "../../components/Post/Post";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
-
+import {useTheme} from "../../context/ThemeContext"
 const AccountPage = () => {
+  
   const user = useSelector((state) => state.users);
+  const { isDarkMode, toggleTheme } = useTheme();
   const AxiosPrivate = useAxiosPrivate();
   const navigate = useNavigate();
   useEffect(() => {
@@ -42,7 +44,7 @@ const AccountPage = () => {
     }
   };
   return (
-    <div className={styles.container} onScroll={handleScroll}>
+    <div className={`${styles.container} ${isDarkMode? styles.dark :null}`} onScroll={handleScroll}>
       {user.succes && (
         <div className={styles.profile}>
           <div>

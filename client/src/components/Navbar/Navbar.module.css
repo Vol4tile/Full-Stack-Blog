@@ -10,6 +10,15 @@ header {
   justify-content: center;
   padding: 20px;
 }
+.dark {
+  background-color: black;
+  color: white;
+}
+.dark nav a,
+.dark nav a:link,
+.dark nav a:visited {
+  color: white;
+}
 nav {
   display: flex;
   align-items: center;
@@ -43,6 +52,7 @@ nav a:hover {
 .active {
   color: #6dd5fa !important;
 }
+
 .post {
   color: white;
   transition: 300ms;
@@ -63,7 +73,9 @@ nav a:hover {
   align-items: center;
   font-size: larger;
 }
-
+.dark .accountNav {
+  background-color: black;
+}
 .accountNav {
   position: absolute;
   width: 200px;
@@ -94,6 +106,16 @@ nav a:hover {
   transform: rotate(180deg);
   font-size: 35px;
 }
+
+  
+.toggle{
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1280px) {
   nav {
     font-size: 14px;

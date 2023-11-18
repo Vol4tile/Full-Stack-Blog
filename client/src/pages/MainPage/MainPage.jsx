@@ -7,7 +7,9 @@ import "../../../node_modules/highlight.js/styles/github.css";
 import { useEffect } from "react";
 import DOMPurify from "dompurify";
 import Post from "../../components/Post/Post";
+import { useTheme } from "../../context/ThemeContext";
 const MainPage = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -38,21 +40,10 @@ const MainPage = () => {
 
   return (
     <>
-      <section data-testid="main-page">
-        <h1
-          style={{
-            padding: "50px 50px 0px 50px",
-            position: "absolute",
-            top: "100px",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            fontFamily: "var(--secondFont)",
-          }}
-        >
-          En Yeniler
-        </h1>
+      <section>
+        <h1 className={isDarkMode ? styles.dark : styles.light}>En Yeniler</h1>
         {posts.map((post) => {
-          return <Post  post={post} key={post._id} />;
+          return <Post post={post} key={post._id} />;
         })}
       </section>
     </>

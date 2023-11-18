@@ -5,6 +5,7 @@
   justify-content: center;
   font-family: var(--thirdFont);
 }
+
 .article {
   margin: 20px;
   height: auto;
@@ -16,9 +17,13 @@
   background-color: white;
   border-radius: 7px;
 }
-
+.dark{
+  background-color: black;
+  color: white;
+}
 .bottomContent {
-  background-color: #f2f4f5;
+  border:1px solid #d0d1d1;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;

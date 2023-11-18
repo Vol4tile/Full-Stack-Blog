@@ -6,6 +6,10 @@
   flex-direction: column;
   gap: 20px;
 }
+.dark .profile{
+  background-color: black;
+  color: white;
+}
 .settings {
   display: flex;
   gap: 20px;
@@ -49,6 +53,14 @@
   justify-content: center;
 
   gap: 10px;
+}
+.dark .changer{
+  background-color: black;
+  color: white;
+}
+.dark .changer label{
+  background-color:rgb(25, 25, 25) ;
+  color: white;
 }
 .changer label {
   display: flex;

@@ -5,7 +5,9 @@ import {GetSelectedPost} from "../../services/postService"
 import parse from "html-react-parser";
 import dateToString from "../../utils/dateToSring";
 import { motion } from "framer-motion";
+import {useTheme} from "../../context/ThemeContext"
 const SelectedPostPage = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
   const { postId } = useParams();
   const [post, setPost] = useState();
   useEffect(() => {
@@ -19,7 +21,7 @@ const SelectedPostPage = () => {
   return (
     <div className={styles.container}>
       <motion.article
-        className={styles.article}
+        className={`${styles.article} ${isDarkMode ? styles.dark : null}`}
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}
@@ -39,6 +41,7 @@ const SelectedPostPage = () => {
                     src={`http://127.0.0.1:5000/${post?.postedBy?.profilePhoto}`}
                     alt="userProfilePhoto"
                     crossOrigin="anonymous"
+                    style={{borderRadius:"50%"}}
                     height={40}
                     width={40}
                   />
