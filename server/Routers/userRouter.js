@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import { tokenControl } from "../utils/tokenControl.js";
 import axios from "axios";
 import fs from "fs";
-
 import {
   changeFullnameSchema,
   changeMailSchema,
