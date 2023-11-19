@@ -21,7 +21,7 @@ const SelectedPostPage = () => {
   return (
     <div className={styles.container}>
       <motion.article
-        className={`${styles.article} ${isDarkMode ? styles.dark : null}`}
+        className={`${styles.article} ${isDarkMode ? styles.dark : ''}`}
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}

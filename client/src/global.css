@@ -67,3 +67,16 @@ svg {
 .q1-formats {
   border-radius: 10%;
 }
+
+@media only screen and (max-width: 500px) {
+  .ql-toolbar{
+    position: relative;
+    background-color: rgb(240, 240, 240);
+  }
+  .ql-container {
+    margin-top: 0px;
+    border: none !important;
+  }
+  
+ }
+ 

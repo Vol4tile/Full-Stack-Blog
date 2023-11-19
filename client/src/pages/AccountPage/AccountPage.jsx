@@ -44,7 +44,7 @@ const AccountPage = () => {
     }
   };
   return (
-    <div className={`${styles.container} ${isDarkMode? styles.dark :null}`} onScroll={handleScroll}>
+    <div className={`${styles.container} ${isDarkMode? styles.dark :''}`} onScroll={handleScroll}>
       {user.succes && (
         <div className={styles.profile}>
           <div>

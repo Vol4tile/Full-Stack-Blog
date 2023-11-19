@@ -28,3 +28,8 @@ section {
     padding: 100px 50px 50px 50px;
   }
 }
+@media only screen and (max-width: 500px) {
+  .dark,.light {
+    padding: 0;
+  }
+}

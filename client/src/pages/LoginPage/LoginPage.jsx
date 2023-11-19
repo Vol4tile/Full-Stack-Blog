@@ -14,7 +14,9 @@ import styles from "./Login.module.css";
 import { HTTP } from "../../services/api";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import {useTheme} from "../../context/ThemeContext"
 function LoginPage() {
+  const { isDarkMode, toggleTheme } = useTheme();
   const [buttonText, setButtonText] = useState("Giriş Yap");
   const [loginErrorText, setLoginErrorText] = useState("");
   const [passwordToggle, setPasswordToggle] = useState(false);
@@ -63,7 +65,7 @@ function LoginPage() {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.innerContainer}>
+        <div className={`${styles.innerContainer} ${isDarkMode ? styles.dark : ''}`}>
           <Formik
             validationSchema={schema}
             initialValues={{ username: "", password: "" }}

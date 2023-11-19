@@ -11,7 +11,7 @@ const Post = ({ post }) => {
     <>
       <motion.article
       data-testid="post"
-        className={`${styles.article} ${isDarkMode ? styles.dark : null}`}
+        className={`${styles.article} ${isDarkMode ? styles.dark : '' }`}
         key={post._id}
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}

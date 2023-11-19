@@ -10,7 +10,7 @@
   gap: 10px;
   z-index: 1;
 }
-.dark{
+.dark {
   background-color: black;
   color: white;
 }
@@ -53,7 +53,7 @@ article a {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border:1px solid #d0d1d1;
+  border: 1px solid #d0d1d1;
   padding: 10px;
 
   border-radius: 5px;
@@ -80,4 +80,17 @@ article a {
 }
 .writerName {
   font-size: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .article {
+    max-width: 100vw;
+  }
+  section {
+    padding: 0;
+    grid-template-columns: auto;
+  }
+  .article {
+    border-radius: 0;
+  }
 }

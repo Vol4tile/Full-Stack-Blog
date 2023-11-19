@@ -18,10 +18,10 @@
   padding: 50px;
   border-radius: 5px;
 }
-.dark .profile{
+.dark .profile {
   color: white;
   background-color: black;
-  }
+}
 .posts {
   width: 100%;
   height: auto;
@@ -35,5 +35,13 @@
   .posts {
     padding: 0;
     padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
+  .profile {
+    width: 100%;
   }
 }

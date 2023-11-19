@@ -13,9 +13,10 @@ import {
   AiOutlineUsergroupAdd,
 } from "react-icons/ai";
 import * as Yup from "yup";
-
+import {useTheme} from "../../context/ThemeContext"
 import { ToastContainer, toast } from "react-toastify";
 const RegisterPage = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
   const [passwordToggle, setPasswordToggle] = useState(false);
   const [registerErrorText, setRegisterErrorText] = useState("");
   const navigate = useNavigate();
@@ -96,7 +97,7 @@ const RegisterPage = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.innerContainer}>
+        <div className={`${styles.innerContainer} ${isDarkMode ? styles.dark : ''}`}>
           <Formik
             validationSchema={schema}
             initialValues={{

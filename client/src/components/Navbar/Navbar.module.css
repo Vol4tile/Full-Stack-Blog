@@ -24,7 +24,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 80%;
+  width: auto;
 }
 .navContainer {
   display: flex;
@@ -107,8 +107,7 @@ nav a:hover {
   font-size: 35px;
 }
 
-  
-.toggle{
+.toggle {
   user-select: none;
   display: flex;
   align-items: center;
@@ -128,5 +127,14 @@ nav a:hover {
   }
   .triangle {
     left: 55%;
+  }
+}
+@media only screen and (max-width: 500px) {
+ 
+  .accountNav {
+    right: -40px;
+  }
+  .triangle {
+    left: 65%;
   }
 }

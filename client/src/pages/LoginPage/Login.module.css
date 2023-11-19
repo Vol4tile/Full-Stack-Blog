@@ -22,6 +22,17 @@
 
   gap: 10px;
 }
+.dark {
+  background-color: black;
+  color: white;
+}
+.dark .form input {
+  color: white;
+}
+.dark .form label {
+  color: white;
+  background-color: #414141;
+}
 .error {
   height: 30px;
   color: red;
@@ -103,4 +114,11 @@
 .googleButton:hover {
   background-color: #f2f4f5;
   color: #0f9d58;
+}
+@media only screen and (max-width: 500px) {
+  .innerContainer {
+    width: 100%;
+    border-radius: 0;
+    height: auto;
+  }
 }

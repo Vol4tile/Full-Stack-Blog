@@ -55,7 +55,7 @@ const SettingsPage = () => {
     .email("email formatında olmalı");
 
   return (
-    <div className={`${styles.container} ${isDarkMode ? styles.dark :null}`}>
+    <div className={`${styles.container} ${isDarkMode ? styles.dark :''}`}>
       {user.succes && (
         <div className={styles.profile}>
           <div>
