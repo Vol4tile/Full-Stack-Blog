@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container input {
+  padding: 15px 35px 15px 35px;
+  min-width: 20%;
+  width: 512px;
+  outline: none;
+  border: none;
+  margin: 10px;
+  border-radius: 10px;
+  color: #777777;
+  background: url("../assets/search.svg") no-repeat 10px center;
+  background-size: 15px;
+  background-color: rgb(235, 235, 235);
+}
+.container input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #777777;
+}
+.container input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #777777;
+  opacity: 1;
+}
+.container input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #777777;
+  opacity: 1;
+}
+.container input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #777777;
+}
+.container input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #777777;
+}
+
+.container input::placeholder {
+  /* Most modern browsers support this now. */
+  color: #777777;
+}
