@@ -5,7 +5,7 @@ import Post from "../components/Post/Post";
 import { ThemeProvider } from "../context/ThemeContext";
 import { BrowserRouter as Router } from "react-router-dom"; // BrowserRouter ekledik
 import { act } from "react-dom/test-utils";
-import styles from "../components/Post/Post.module.css"
+import styles from "../components/Post/Post.module.css";
 
 test("Post Component Test", async () => {
   const data = {
@@ -21,7 +21,7 @@ test("Post Component Test", async () => {
     createDate: "2023-00-0T00:00:00.000Z",
     __v: 0,
   };
-  
+
   await act(async () => {
     render(
       <ThemeProvider>
@@ -34,7 +34,6 @@ test("Post Component Test", async () => {
 
   // Verilen test içeriğinin post içinde görüntülenip görüntülenmediğini kontrol et
   const postElement = screen.getByTestId("post-content");
-  screen.debug()
   expect(postElement).toBeInTheDocument();
   expect(postElement).toHaveTextContent("hello world");
 });
