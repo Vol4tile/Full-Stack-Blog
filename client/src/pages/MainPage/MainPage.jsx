@@ -44,7 +44,7 @@ const MainPage = () => {
       <section>
         <h1 className={isDarkMode ? styles.dark : styles.light}>En Yeniler</h1>
         {posts.map((post) => {
-          return <div post={post}  data-testid="post-element" key={post._id} />;
+          return <Post post={post}  data-testid="post-element" key={post._id} />;
         })}
       </section>
     </>

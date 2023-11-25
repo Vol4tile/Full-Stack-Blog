@@ -12,6 +12,7 @@ import {useTheme} from "../../context/ThemeContext"
 import { FiSun, FiMoon } from "react-icons/fi";
 import { AiOutlineUser, AiOutlineLogout, AiFillSetting } from "react-icons/ai";
 import { RxTriangleUp } from "react-icons/rx";
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
 const Navbar = () => {
   const userData = useSelector((state) => state.users);
   const { isDarkMode, toggleTheme } = useTheme();
@@ -162,13 +163,7 @@ const Navbar = () => {
               userData.errorHandler == true) && (
               <Link to="Login">Giriş Yap</Link>
             )}
-               <div className={styles.toggle}>
-          {isDarkMode ? (
-            <FiMoon size={20} onClick={toggleTheme} />
-          ) : (
-            <FiSun size={20} onClick={toggleTheme} />
-          )}
-        </div>
+              <ToggleTheme/>
           </div>
         </nav>
       </header>

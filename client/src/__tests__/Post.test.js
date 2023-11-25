@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen,fireEvent,waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Post from "../components/Post/Post";
 import { ThemeProvider } from "../context/ThemeContext";
@@ -22,9 +22,11 @@ test("Post Component Test", async () => {
     __v: 0,
   };
 
+
+
   await act(async () => {
     render(
-      <ThemeProvider>
+      <ThemeProvider value={{  isDarkMode: true }}>
         <Router>
           <Post post={data} />
         </Router>
@@ -36,4 +38,8 @@ test("Post Component Test", async () => {
   const postElement = screen.getByTestId("post-content");
   expect(postElement).toBeInTheDocument();
   expect(postElement).toHaveTextContent("hello world");
+
+  // Toggle Dark Mode butonunu tıkla
+ screen.debug()
+
 });
